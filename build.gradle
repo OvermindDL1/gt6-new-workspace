@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
+	jcenter()
         maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
@@ -9,16 +10,35 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
+        maven {
+            name = "gt"
+            url = "http://gregtech.overminddl1.com/"
+        }
+	maven {
+	    name = "OC repo"
+	    url = "http://maven.cil.li/"
+	}
+	maven {
+	    name = "ic2"
+	    url = "http://maven.ic2.player.to/"
+	}
+	maven {
+	    name = "jabba"
+	    url = "http://mobiusstrip.eu/maven"
+	}
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+	classpath 'de.undercouch:gradle-download-task:3.2.0'
     }
 }
 
+apply plugin: 'de.undercouch.download'
 apply plugin: 'forge'
 
+def gt6_version = "6.05.34"
 version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "modid"
 
 minecraft {
@@ -27,7 +47,13 @@ minecraft {
 }
 
 dependencies {
-    // you may put jars on which you depend on in ./libs
+    compile fileTree(dir: 'libs', include: '*.jar')
+    compile "li.cil.oc:OpenComputers:MC1.7.10-1.5.21.41:dev"
+    compile "mcp.mobius.jabba:Jabba:1.2.2_1.7.10:dev"
+    compile 'net.industrial-craft:industrialcraft-2:2.2.624-experimental:api'
+    compile group: 'com.gregoriust.gregtech', name: 'gregtech_1.7.10', version: gt6_version, classifier: 'dev'
+
+    // you may put jars on which you depend on in ./libs (just don't commit them to git)
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
@@ -61,3 +87,11 @@ processResources
         exclude 'mcmod.info'
     }
 }
+
+// Always keep this randomcode updated
+download {
+    src 'https://gregtech.overminddl1.com/com/gregoriust/gregtech/gregtech_1.7.10/randomcode.jar'
+    dest 'libs/randomcode.jar'
+    onlyIfNewer true
+}
+
