@@ -67,7 +67,7 @@ Then setup whatever IDE you wish to use.  Forge is built primarily with Eclipse 
 To build your mod just run:
 
 ```sh
-./gradlew assemble
+./gradlew build
 ```
 
 Your library should be at `./build/libs` and you can distribute as you wish.
