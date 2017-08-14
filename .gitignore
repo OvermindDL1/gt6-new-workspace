@@ -4,3 +4,11 @@ libs/*.jar
 # Build system files
 .gradle/*
 build/*
+
+# IDEA files:
+.classpath
+.project
+.settings/org.eclipse.jdt.core.prefs
+gffs.iml
+gffs.ipr
+gffs.iws
