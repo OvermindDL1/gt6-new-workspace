@@ -24,7 +24,7 @@ Clone this repository via (as with all shell examples in this file, alter as nec
 ```sh
 git clone https://github.com/OvermindDL1/gt6-new-workspace.git mymod # Clone this repository to your own location
 cd mymod # Change to the directory of your new mod workspace
-rm -r .git # Remove the template history
+rm -rf .git # Remove the template history
 git init # Initialize your own git history
 git add -A # Add all existing files to your git history as the new base
 git commit -m 'Initial workspace creation from template' # And save it
