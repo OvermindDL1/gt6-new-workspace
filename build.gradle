@@ -21,7 +21,7 @@ apply plugin: 'de.undercouch.download'
 apply plugin: 'forge'
 
 def gt6_version = "6.05.34"
-version = "1.0"
+version = "0.0.0"
 group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "modid"
 
@@ -111,7 +111,8 @@ task buildInfo {
     if (System.getenv().BUILD_NUMBER != null) {
         ext.buildNum = "${System.getenv().BUILD_NUMBER}"
     } else {
-        ext.buildNum = "DEV.${project.buildInfo.revision}"
+        def date = new Date().format('yyyyMMddHHmmss')
+        ext.buildNum = "DEV.${date}.${project.buildInfo.revision}"
     }
 }
 
@@ -119,7 +120,7 @@ ext.artifact_version = 'NFG'
 if (System.getenv().ARTIFACT_VERSION == null) {
     artifact_version = "${project.buildInfo.buildNum}"
 } else {
-    artifact_version = "${system.getenv().ARTIFACT_VERSION}"
+    artifact_version = "${System.getenv().ARTIFACT_VERSION}"
 }
 
 version = "${version}-${artifact_version}"

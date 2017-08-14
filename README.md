@@ -70,6 +70,12 @@ To build your mod just run:
 ./gradlew build
 ```
 
+If you wish to make a full release build then set the `ARTIFACT_VERSION` to a unique incremental ID before running build, such as via (great to put in a continuous building system!):
+
+```sh
+ARTIFACT_VERSION=1 ./gradlew build
+```
+
 Your library should be at `./build/libs` and you can distribute as you wish.
 
 # GT6 Modding Documentation
