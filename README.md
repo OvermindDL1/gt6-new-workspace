@@ -34,7 +34,7 @@ Then you should open the `build.gradle` file in the text editor of your choice a
 
 ```groovy
 def gt6_version = "6.05.34"
-version = "1.0"
+version = "0.0.0"
 group = "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "modid"
 ```
