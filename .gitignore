@@ -3,4 +3,4 @@ libs/*.jar
 
 # Build system files
 .gradle/*
-
+build/*
