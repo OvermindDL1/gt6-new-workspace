@@ -50,6 +50,12 @@ At this point make a GT6 mod as normal, such as with the normal Forge workspace 
 ./gradlew setupDecompWorkspace --refresh-dependencies
 ```
 
+If you wish to also be able to run your mod as you test and program it then also then run:
+
+```sh
+./gradlew setupDevWorkspace
+```
+
 Then setup whatever IDE you wish to use.  Forge is built primarily with Eclipse in mind so if you use anything better like Intellij then that will require slightly more setup (documentation PR's welcome for other IDE's).  As it is built with Eclipse in mind then you can just run this command to have everything setup properly for Eclipse:
 
 ```sh
