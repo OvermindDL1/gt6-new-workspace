@@ -47,20 +47,28 @@ repositories {
         name = "jabba"
         url = "http://default.mobiusstrip.eu/maven"
     }
+    maven {
+        name = "chickenbones"
+        url = "http://chickenbones.net/maven/"
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile "li.cil.oc:OpenComputers:MC1.7.10-1.5.21.41:dev"
     compile "mcp.mobius.jabba:Jabba:1.2.2_1.7.10:dev"
-    compile 'net.industrial-craft:industrialcraft-2:2.2.624-experimental:api'
+    //compile "mcp.mobius.waila:Waila:1.5.8a_1.7.10:dev" // Already included elsewhere
+    compile "net.industrial-craft:industrialcraft-2:2.2.828-experimental:api" // 624
+    compile "codechicken:CodeChickenLib:1.7.10-1.1.3.140:dev"
+    compile "codechicken:CodeChickenCore:1.7.10-1.0.7.47:dev"
+    compile "codechicken:NotEnoughItems:1.7.10-1.0.5.120:dev"
     compile group: 'com.gregoriust.gregtech', name: 'gregtech_1.7.10', version: gt6_version, classifier: 'dev'
 
     // you may put jars on which you depend on in ./libs (just don't commit them to git)
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
-      
+
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
@@ -80,23 +88,24 @@ processResources
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-                
+
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-        
+
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
 }
 
-// Always keep this randomcode updated
-download {
-    src 'https://gregtech.overminddl1.com/com/gregoriust/gregtech/gregtech_1.7.10/randomcode.jar'
-    dest 'libs/randomcode.jar'
-    onlyIfNewer true
-}
+// Always keep this randomcode updated if enabled.
+// Do not enable this unless you know what you are doing and want to access every-single-API that GT6 also accesses.
+//download {
+//    src 'https://gregtech.overminddl1.com/com/gregoriust/gregtech/gregtech_1.7.10/randomcode.jar'
+//    dest 'libs/randomcode.jar'
+//    onlyIfNewer true
+//}
 
 task buildInfo {
     def cmd = "git rev-parse --short HEAD"
