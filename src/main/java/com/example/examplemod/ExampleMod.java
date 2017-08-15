@@ -24,7 +24,7 @@ public final class ExampleMod extends gregapi.api.Abstract_Mod {
 	/** This is your Mods Name */
 	public static final String MOD_NAME = "modname"; // <-- TODO: you need to change this to the Name of your own Mod, and then remove this Comment after you did that.
 	/** This is your Mods Log Name */
-	public static final String MOD_LOG_NAME = "Example Mod";
+	public static final String MOD_LOG_NAME = "Example Mod"; // <-- TODO: you need to change this to a short unique name of the mod for logging purposes.
 	/** This is your Mods Version */
 	public static final String VERSION = "0.0.0"; // <-- TODO: you need to change this to the Version of your own Mod, and then remove this Comment after you did that.
 
