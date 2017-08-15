@@ -84,3 +84,14 @@ There is no source for modding GT6 specific information other than in the GT6 AP
 
 PR's to this Repo itself are always welcome and encouraged!
 
+## Basic setup
+
+To setup your actual source files, after naming your mod in the `build.gradle` file as above then next you will want to perform these steps (please PR for better documentation!):
+
+1. Change the namespace of your mod, renaming the folders as appropriately.
+2. Rename the ExampleMod.java file to whatever you want your mod file to be named.
+3. Inside the previously ExampleMod.java file rename anything named ExampleMod to your new name as appropriate
+4. Also change the top `public static final` variables near the top as appropriate.
+5. Change the namespace for the proxy's as appropriate (you do not need to rename the proxy files for note, just adjust their namespace package).
+6. Uncomment out the `@Mod` annotation in the previous ExampleMod.java file, renaming as appropriate.
+7. Look through the commented example code (which you can uncomment and run if you wish, it will just lack textures is all) to see example usage of the GT6 API.

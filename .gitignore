@@ -4,10 +4,11 @@ libs/*.jar
 # Build system files
 .gradle/*
 build/*
+bin/*
 
 # Eclipse files:
-#eclipse
-#!eclipse/.metadata/org.eclipse.debug.core/.launches/*
+eclipse
+!eclipse/.metadata/org.eclipse.debug.core/.launches/*
 .settings/org.eclipse.jdt.core.prefs
 
 # IDEA files:
