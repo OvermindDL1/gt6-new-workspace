@@ -5,6 +5,10 @@ libs/*.jar
 .gradle/*
 build/*
 
+# Eclipse files:
+eclipse
+!eclipse/.metadata/org.eclipse.debug.core/.launches/*
+
 # IDEA files:
 .classpath
 .project
@@ -12,3 +16,6 @@ build/*
 gffs.iml
 gffs.ipr
 gffs.iws
+
+# Kate files:
+*.kate-swp
