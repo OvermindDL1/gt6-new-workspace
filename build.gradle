@@ -1,7 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
-	jcenter()
+        jcenter()
         maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
@@ -13,7 +13,7 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
-	classpath 'de.undercouch:gradle-download-task:3.2.0'
+        classpath 'de.undercouch:gradle-download-task:3.2.0'
     }
 }
 
@@ -172,7 +172,7 @@ task deobfJar(type: Jar) {
     classifier = 'deobf'
     exclude('ic2/**')
 }
-	 
+
 task sourcesJar(type: Jar) {
     from sourceSets.main.allJava
     classifier = 'sources'
