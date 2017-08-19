@@ -55,6 +55,10 @@ repositories {
         name = "Apple"
         url "http://www.ryanliptak.com/maven/"
     }
+    ivy {
+        name "BuildCraft"
+        artifactPattern "http://www.mod-buildcraft.com/releases/BuildCraft/[revision]/[module]-[revision](-[classifier]).[ext]"
+    }
 }
 
 dependencies {
@@ -67,6 +71,7 @@ dependencies {
     compile "codechicken:CodeChickenCore:1.7.10-1.0.7.47:dev"
     compile "codechicken:NotEnoughItems:1.7.10-1.0.5.120:dev"
     compile "applecore:AppleCore:1.7.10-1.3.9+241.82d7c:deobf"
+    compile name: "buildcraft", version: "7.2.5" // , classifier: "api"
     compile group: 'com.gregoriust.gregtech', name: 'gregtech_1.7.10', version: gt6_version, classifier: 'dev'
 
     // you may put jars on which you depend on in ./libs (just don't commit them to git)
