@@ -25,6 +25,9 @@
 !/gradle/wrapper/gradle-wrapper.jar
 !/gradle/wrapper/gradle-wrapper.properties
 
+# IDE related build files
+!/.run/*.xml
+
 # Meta project files
 !/.meta/**/*
 
